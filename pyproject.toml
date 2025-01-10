@@ -1,0 +1,29 @@
+[project]
+name = "xsdc"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1.8",
+    "pydantic-settings>=2.7.0",
+    "xmlschema>=3.4.3",
+    "lxml>=5.3.0",
+]
+
+[project.scripts]
+xsdc = "xsdc.__main__:cli"
+
+[tool.uv]
+package = true
+
+[tool.uv.sources]
+xsdc = { workspace = true }
+
+[tool.setuptools]
+py-modules = ["xsdc"]
+
+[dependency-groups]
+dev = [
+    "datamodel-code-generator>=0.26.4",
+]
